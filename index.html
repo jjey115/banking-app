@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Banking App</title>
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+  </head>
+  <body>
+    <form>
+      <div>
+        <label for="user-txtbox">
+          Name:
+          <input name="user-txtbox" type="text" id="user-txtbox" />
+        </label>
+        <label for="init-balance">
+          Initial Balance:
+          <input name="init-balance" type="number" id="init-balance" />
+        </label>
+        <button id="btn-add-user" type="button">Add User</button>
+      </div>
+      <div>
+        <label>
+            Name:
+            <select id="name-list"></select>
+          </label>
+        <label for="amt-txtbox">
+          Amount:
+          <input name="amt-txtbox" type="number" id="amt-txtbox" />
+        </label>
+        <button id="btn-withdraw" type="button">Withdraw</button>
+        <button id="btn-deposit" type="button">Deposit</button>
+      </div>
+      <div>
+        <label>
+            From:
+            <select id="name-list-from"></select>
+          </label>
+          <label>
+            To:
+            <select id="name-list-to"></select>
+          </label>
+        <button id="btn-send" type="button">Send</button>
+      </div>
+    </form>
+  </body>
+  <script src="main.js"></script>
+</html>
