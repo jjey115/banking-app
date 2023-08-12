@@ -19,28 +19,43 @@
       </div>
       <div>
         <label>
-            Name:
-            <select id="name-list"></select>
-          </label>
+          Name:
+          <select id="name-list"></select>
+        </label>
         <label for="amt-txtbox">
           Amount:
           <input name="amt-txtbox" type="number" id="amt-txtbox" />
         </label>
         <button id="btn-withdraw" type="button">Withdraw</button>
         <button id="btn-deposit" type="button">Deposit</button>
+        <button id="btn-balance" type="button">Balance</button>
       </div>
       <div>
         <label>
-            From:
-            <select id="name-list-from"></select>
-          </label>
-          <label>
-            To:
-            <select id="name-list-to"></select>
-          </label>
+          From:
+          <select id="name-list-from"></select>
+        </label>
+        <label>
+          To:
+          <select id="name-list-to"></select>
+        </label>
         <button id="btn-send" type="button">Send</button>
       </div>
+      <div>
+        <button id="btn-user-list" type="button">User List</button>
+        <h1 id="value-display"></h1>
+      </div>
     </form>
+    <table>
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Balance</th>
+        </tr>
+      </thead>
+      <tbody id="test">
+      </tbody>
+    </table>
   </body>
   <script src="main.js"></script>
 </html>

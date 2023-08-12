@@ -54,7 +54,7 @@ const sendMoney = (from_user, to_user, amount) => {
 const getBalance = (user) => {
   userList.forEach((username) => {
     if (username.user === user) {
-      console.log(username.balance);
+      valueDisplay.innerHTML = username.balance;
     }
   });
 };
@@ -71,6 +71,22 @@ const addDropDownOption = (user, dropDown) => {
   dropDown.appendChild(option);
 };
 
+const addTableList = () => {
+  let tableBody = document.getElementById("test");
+  tableBody.replaceChildren();
+  userList.forEach((user) => {
+    let tr = document.createElement("tr");
+    let tdName = document.createElement("td");
+    let tdBalance = document.createElement("td");
+    tdName.innerHTML = user.user;
+    tdBalance.innerHTML = user.balance;
+    tr.appendChild(tdName);
+    tr.appendChild(tdBalance);
+
+    tableBody.appendChild(tr);
+  });
+};
+
 //SELECTORS
 
 const addUserBtn = document.getElementById("btn-add-user");
@@ -83,6 +99,9 @@ const balTxtbox = document.getElementById("init-balance");
 const nameDropDown = document.getElementById("name-list");
 const fromDropDown = document.getElementById("name-list-from");
 const toDropDown = document.getElementById("name-list-to");
+const valueDisplay = document.getElementById("value-display");
+const balanceBtn = document.getElementById("btn-balance");
+const userListBtn = document.getElementById("btn-user-list");
 
 //EVENT LISTENERS
 
@@ -108,8 +127,16 @@ depositBtn.addEventListener("click", function () {
 });
 
 sendBtn.addEventListener("click", function () {
-    sendMoney(fromDropDown.value,toDropDown.value,amtTxtbox.value);
-    toDropDown.value = userList[0].user;
-    fromDropDown.value = userList[0].user;
-    amtTxtbox.value = "";
+  sendMoney(fromDropDown.value, toDropDown.value, amtTxtbox.value);
+  toDropDown.value = userList[0].user;
+  fromDropDown.value = userList[0].user;
+  amtTxtbox.value = "";
+});
+
+balanceBtn.addEventListener("click", function () {
+  getBalance(nameDropDown.value);
+});
+
+userListBtn.addEventListener("click", function () {
+  addTableList();
 });
